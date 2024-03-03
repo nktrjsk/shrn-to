@@ -1,0 +1,26 @@
+DirectoryIndex clanek.php?id=1
+Options -Indexes
+Options +FollowSymlinks
+RewriteEngine On
+
+ErrorDocument 404 /404.php
+ErrorDocument 403 /403.php
+
+SetEnv mysql_server localhost
+SetEnv mysql_user user
+SetEnv mysql_pass password
+SetEnv mysql_db db
+
+#RewriteCond %{REQUEST_URI} ^((?!\/index\.php|404|403).)*$
+RewriteRule ^kategorie/([^/]+)$ /kategorie.php?cat=$1 [L]
+RewriteRule ^clanky$ /clanky.php
+RewriteRule ^clanek/([^/]+)$ /clanek.php?id=$1 [L]
+RewriteRule ^clanek/([^/]+)/edit$ /clanek_edit.php?id=$1 [L]
+RewriteRule ^user/([^/]+)$ /user.php?id=$1 [L]
+RewriteRule ^novy_clanek$ /novy_clanek.php [L]
+RewriteRule ^nastaveni$ /nastaveni.php [L]
+
+#RewriteCond %{REQUEST_URI} ^\/(index\.php|404|403)$
+RewriteRule ^404$ /404.php [L]
+RewriteRule ^403$ /403.php [L]
+RewriteRule ^\/$ /index.php [L]
