@@ -1,0 +1,29 @@
+services:
+  mariadb:
+    image: docker.io/library/mariadb:latest
+    # ports:
+    # - 3306:3306
+    environment:
+      MARIADB_DATABASE: shrnto
+      MARIADB_USER: shrnto
+      MARIADB_PASSWORD: supersecretapplicationpassword
+      MARIADB_ROOT_PASSWORD: supersecretrootpassword
+    restart: unless-stopped
+  migrations:
+    depends_on:
+    - mariadb
+    image: docker.io/flyway/flyway:latest
+    command: migrate
+    environment:
+      FLYWAY_URL: jdbc:mysql://mariadb/shrnto
+      FLYWAY_USER: shrnto
+      FLYWAY_PASSWORD: supersecretapplicationpassword
+    restart: on-failure
+    volumes:
+    - ./sql:/flyway/sql
+  shrnto:
+    depends_on:
+    - migrations
+    build: .
+    ports:
+    - 8080:80
