@@ -2,8 +2,8 @@
 
 ## Disclaimer
 
-***This code is probably broken and won't run, but if you're brave enough
-to try and make it work, feel free to fork it and open a pull request.***
+***This code somewhat works, but is not actively maintained. If you find
+a bug though, you can let me know and I will try to fix it.***
 
 ## About project
 
