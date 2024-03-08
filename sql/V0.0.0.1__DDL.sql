@@ -17,10 +17,10 @@ CREATE TABLE IF NOT EXISTS `kategorie`(
 CREATE TABLE IF NOT EXISTS `uzivatele`(
     `id` bigint UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
     `user_id` text NOT NULL,
-    `status` text NOT NULL,
+    `status` text NOT NULL DEFAULT "user",
     `username` text NOT NULL,
     `password` varchar(129) NOT NULL,
-    `bio` varchar(500) NOT NULL
+    `bio` varchar(500) NOT NULL DEFAULT ""
 );
 
 ALTER TABLE `clanky`
