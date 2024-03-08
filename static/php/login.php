@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once $_SERVER["DOCUMENT_ROOT"] . "/static/php/dbh.php";
 
 $uid = $_POST["uid"];
@@ -18,8 +19,6 @@ else
 
     if ($password_hash === $combined)
     {
-        echo "success";
-        session_start();
         $params = session_get_cookie_params();
         setcookie(session_name(), session_id(), 0,
             $params["path"], $params["domain"],
@@ -36,6 +35,7 @@ else
         $_SESSION["id"] = $userquery["id"];
         $_SESSION["username"] = $userquery["username"];
         $_SESSION["uid"] = $userquery["user_id"];
+        echo "success";
     }
     else
     {
