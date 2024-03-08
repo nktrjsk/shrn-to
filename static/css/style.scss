@@ -28,7 +28,7 @@
   --txtcolor: white;
   --txtcolor-selected: #292929;
   --txtcolor-visited: #999999;
-  --main-logo: url("/static/img/logo_long_dark.png")
+  --main-logo: url("/static/img/logo_long_dark.png");
 }
 
 [theme="light"]
@@ -38,7 +38,7 @@
   --navcolor: #cacaca;
   --profilecolor: #cfcfcf;
   --txtcolor: black;
-  --main-logo: url("/static/img/logo_long.png")
+  --main-logo: url("/static/img/logo_long.png");
 }
 
 html
@@ -52,7 +52,7 @@ body
   background-color: var(--bgcolor);
   color: var(--txtcolor);
   transition: background-color 1s, color 1s;
-  width: min(1280px, 100%);
+  width: #{'min(1280px, 100%)'};
   height: 100%;
   min-height: 100vh;
   margin: auto;
