@@ -6,10 +6,10 @@ RewriteEngine On
 ErrorDocument 404 /404.php
 ErrorDocument 403 /403.php
 
-SetEnv mysql_server localhost
-SetEnv mysql_user user
-SetEnv mysql_pass password
-SetEnv mysql_db db
+SetEnv mysql_server mariadb
+SetEnv mysql_user shrnto
+SetEnv mysql_pass supersecretapplicationpassword
+SetEnv mysql_db shrnto
 
 #RewriteCond %{REQUEST_URI} ^((?!\/index\.php|404|403).)*$
 RewriteRule ^kategorie/([^/]+)$ /kategorie.php?cat=$1 [L]
