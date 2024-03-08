@@ -5,6 +5,13 @@
 ***This code somewhat works, but is not actively maintained. If you find
 a bug though, you can let me know and I will try to fix it.***
 
+## NEW: Deploy this site with Docker
+
+All you have to do is to run this command and you are ready to go.
+```bash
+docker compose up
+```
+
 ## About project
 
 ### Last changes: August 2021
